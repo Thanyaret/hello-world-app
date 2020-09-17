@@ -2,6 +2,7 @@
 import React,{useState} from 'react';
 import { StyleSheet, Text, View,Image, TextInput,
 Button} from 'react-native';
+import MyButton from './components/MyButton.js'
 
 export default function App() {
   const [ input, setInput] = useState('')
@@ -17,9 +18,9 @@ export default function App() {
         placeholder="Input here" style={styles.input} />
         <Text style={{fontSize:18,marginTop:20, color: color}}>{input}</Text>
         <View style={styles.buttonLayout}>
-      <Button title='Red' color="red" onPress={() =>{ setColor('red')}}/>
-      <Button title='Blue' color="blue" onPress={() =>{ setColor('blue')}}/>
-      <Button title='Green' color="green" onPress={() =>{ setColor('green')}}/>
+        <MyButton title='Red' color='red' onChangeColor={(color) => {setColor(color)}}/>
+        <MyButton title='Blue' color='blue' onChangeColor={(color) => {setColor(color)}}/>
+        <MyButton title='Green' color='green' onChangeColor={(color) => {setColor(color)}}/>
       </View>
     </View>
     
